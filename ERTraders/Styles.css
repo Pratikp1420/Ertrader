@@ -1,0 +1,315 @@
+ul.menu {
+    list-style: none;
+    margin: 0;
+    padding: 20px;
+}
+
+ul.menu li {
+    display: inline; /* Display menu items horizontally */
+    margin-right: 50px; /* Adjust spacing between menu items */
+    
+}
+
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Place the video behind other content */
+    overflow: hidden;
+}
+
+/* Style the video element */
+.video-background video {
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Align the menu to the right side */
+nav {
+    display: flex; /* Use flexbox to align items horizontally */
+    justify-content: space-between; /* Distribute space between logo and menu items */
+    align-items: center; /* Vertically align items in the middle */
+    padding: 0; /* Add padding to the navigation bar */
+    
+    
+}
+nav:hover {
+    background-color: rgba(0, 0, 0, 0.7); /* Adjust the color and opacity as needed */
+}
+nav:hover::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Adjust the color and opacity as needed */
+    z-index: -1; /* Place it behind the navigation content */
+}
+
+.menu li a {
+    position: relative;
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    transition: transform 0.3s ease; /* Add a smooth transform effect */
+}
+
+.menu li a::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px; /* Line height */
+    background-color: #f9a825; /* Yellow color */
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0); /* Initially hidden */
+    transform-origin: right; /* Expand from the right */
+    transition: transform 0.3s ease; /* Add a smooth transform effect */
+}
+
+/* Add hover effect to menu items */
+.menu li a:hover {
+    transform: translateY(-5px); /* Move text up slightly on hover */
+}
+
+.menu li a:hover::before {
+    transform: scaleX(1); /* Expand the line on hover */
+    transform-origin: left; /* Expand from the left */
+}
+/* Style the main menu */
+.menu {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.menu li {
+    position: relative;
+}
+
+/* Style the submenu */
+.submenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none; /* Initially hidden */
+    list-style: none;
+    padding: 0;
+    background-color:black; /* Background color for the submenu */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add a shadow */
+}
+
+.submenu li {
+    padding: 10px;
+}
+
+/* Show the submenu when the parent item is hovered */
+.menu li:hover .submenu {
+    display: block;
+}
+
+/* Style the down arrow icon */
+.menu li.has-submenu::after {
+    content: "\25BC"; /* Unicode arrow-down character */
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    font-size: 14px; /* Adjust the size of the arrow */
+    color: #333; /* Arrow color */
+    cursor: pointer; /* Change cursor on hover */
+}
+
+/* Style the down arrow icon on hover */
+.menu li.has-submenu:hover::after {
+    color: #f9a825; /* Change color on hover */
+}
+
+/* Style the marquee element */
+marquee {
+    position: absolute; /* Fixed position */
+    top: 0; /* Adjust as needed */
+    left: 0; /* Adjust as needed */
+    width: 100%; /* Full width */
+    font-size: 25px;
+    color: #fff; /* Text color */
+    padding: 10px; /* Add padding for better visibility */
+    overflow: hidden; /* Hide overflow text */
+    white-space: nowrap; /* Prevent line breaks */
+    transition: background-color 0.3s ease; /* Transition for background color */
+}
+
+/* Hover effect on the marquee */
+marquee:hover {
+    color: #f9a825; /* Change background color on hover */
+}
+
+
+
+
+/* Style the logo */
+.logo img {
+    max-height: 150px; /* Set the maximum height for the logo */
+   
+}
+
+.design a{
+    font-size: 20px;
+    color: white;
+    transition: 0.3s;   
+    
+}
+.design a:hover{
+    color: yellow;
+}
+body{
+    background-color: black;
+}
+
+.body-content {
+    display: flex;
+    justify-content: space-between; /* Space between text and image */
+    align-items: center; /* Vertically center content */
+    padding: 20px; /* Add padding for spacing */
+}
+
+/* Style the text content on the left */
+.text-content {
+    color: white;
+    line-height: 1.5;
+    text-align: center;
+    font-size: 40px; /* Set your desired font size */
+    white-space: nowrap; /* Prevent line breaks */
+    overflow: hidden; /* Hide overflowing text */
+    margin-top: -5%;
+    margin-left: 5%;
+     
+    
+}
+
+.text-content h1 {
+    animation: abstractAnimation 2s ease-in-out; /* Apply the animation */
+}
+
+
+.ertraders {
+    color: #f9a825; /* Set the initial color to yellow */
+}
+
+
+@keyframes abstractAnimation {
+    0% {
+        transform: translateX(-500px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+
+
+/* Style the image content on the right */
+.image-content {
+    flex: 1; /* Take up available space in the flex container */
+    text-align: center; /* Align image to the right */
+}
+.image-content img {
+    max-width: 100%; /* Ensure the image does not exceed its container's width */
+    height: 400px; /* Maintain the aspect ratio of the image */
+    display: inline-block; /* Remove any default spacing and center the image horizontally */
+    margin: 15%; /* Center the image horizontally */
+    margin-right: 0px;
+}
+
+
+/* -------------------------About us--------------------------*/
+
+/* Styles for the About page */
+.about-page {
+    text-align: center;
+    background-color: #000000;
+    display: flex;
+    justify-content: space-between;
+   
+    padding: 40px;
+}
+
+.about-image {
+    max-width: 50%; /* Reduce image size */
+    height: 50px;
+    display: inline-block;
+    
+}
+
+.Dis-content {
+    color: white;
+    flex: 1;
+    padding: 20px;
+}
+
+.Dis-content h1 {
+    font-size: 60px;
+}
+
+.Dis-content h3 {
+    font-size: 18px;
+    font-style: italic;
+}
+
+.hover-effect:hover {
+    color: #f9a825; /* Hover effect background color */
+}
+
+.typing-animation {
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 18px;
+    line-height: 1.6;
+    border-right: 2px solid transparent;
+    animation: typing 10s steps(300, end);
+    transition: background-color 0.3s ease;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+/* Styles for the "Why Choose Us" section */
+.why-choose-us {
+    background-color: black;
+    padding: 40px;
+    text-align: center;
+}
+
+.why-choose-us h2 {
+    color: white;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.why-choose-us p {
+    color: white;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+
+
+
